@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using QuizifydBackend.Application.IRepositories;
 using QuizifydBackend.Infrastructure.Data;
+using QuizifydBackend.Infrastructure.Repostiories;
 
 namespace QuizifydBackend.Infrastructure
 {
@@ -10,6 +12,9 @@ namespace QuizifydBackend.Infrastructure
 
         public static IServiceCollection AddDIInfra(this IServiceCollection service)
         {
+
+            service.AddScoped<IBlogRepo, BlogRepo>();
+
             return service;
         }
 

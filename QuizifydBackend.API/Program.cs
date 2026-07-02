@@ -1,3 +1,4 @@
+using QuizifydBackend.Application;
 using QuizifydBackend.Infrastructure;
 using QuizifydBackend.Infrastructure.Data;
 
@@ -7,6 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 //register infrastructure dbcontext
 builder.Services.AddDbContextInfra(builder.Configuration);
+
+builder.Services.AddDIInfra();
+
+builder.Services.AddDIApp();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

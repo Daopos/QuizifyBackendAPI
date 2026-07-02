@@ -15,24 +15,26 @@ namespace QuizifydBackend.Infrastructure.Data
 
         }
 
-        //public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Blog>(builder =>
-        //    {
-        //        builder.Property(x => x.Title)
-        //            .IsRequired();
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Blog>(builder =>
+            {
+                builder.HasKey(x => x.Id);
 
-        //        builder.Property(x => x.Description)
-        //            .IsRequired();
+                builder.Property(x => x.Title)
+                    .IsRequired();
 
-        //        builder.Property(x => x.Category)
-        //            .IsRequired();
-        //    });
+                builder.Property(x => x.Description)
+                    .IsRequired();
 
-        //    base.OnModelCreating(modelBuilder);
-        //}
+                builder.Property(x => x.Category)
+                    .IsRequired();
+            });
+
+            base.OnModelCreating(modelBuilder);
+        }
 
     }
 }
