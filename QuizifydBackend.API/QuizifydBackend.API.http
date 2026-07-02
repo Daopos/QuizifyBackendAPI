@@ -1,0 +1,6 @@
+@QuizifydBackend.API_HostAddress = http://localhost:5252
+
+GET {{QuizifydBackend.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
