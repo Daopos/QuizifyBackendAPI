@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace QuizifydBackend.Application.DTO.Blogs
 {
-    public record CreateupdateBlogDto(string Title, string Desciprtion, string Category, string[]? Tags);
+    public record CreateupdateBlogDto(string Title, string Description, string Category, string[]? Tags);
 }

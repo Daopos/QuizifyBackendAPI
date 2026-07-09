@@ -4,14 +4,14 @@ using QuizifydBackend.Application.IServices;
 
 namespace QuizifydBackend.API.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("[controller]")]
-    public class BlogConrtoller : Controller
+    public class BlogController : Controller
     {
 
         private readonly IBlogService _blogService;
 
-        public BlogConrtoller(IBlogService blogService)
+        public BlogController(IBlogService blogService)
         {
             _blogService = blogService;
         }

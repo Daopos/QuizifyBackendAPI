@@ -27,7 +27,7 @@ namespace QuizifydBackend.Application.Services
                 var mapBlog = new Blog
                 {
                     Title = blog.Title,
-                    Description = blog.Desciprtion,
+                    Description = blog.Description,
                     Category = blog.Category,
                     Tags = blog.Tags
                 };
