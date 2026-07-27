@@ -34,8 +34,8 @@ app.MapGet("/db-check", async (AppDbContext db) =>
     {
         var canConnect = await db.Database.CanConnectAsync();
         return canConnect
-            ? Results.Ok("Connected to Supabase!")
-            : Results.Problem("Cannot connect to Supabase.");
+            ? Results.Ok("Connected to azure!")
+            : Results.Problem("Cannot connect to azure.");
     }
     catch (Exception ex)
     {

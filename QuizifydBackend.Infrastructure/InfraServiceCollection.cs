@@ -22,7 +22,7 @@ namespace QuizifydBackend.Infrastructure
         {
 
             service.AddDbContext<AppDbContext>(options =>
-                options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"))
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
             );
 
             return service;
