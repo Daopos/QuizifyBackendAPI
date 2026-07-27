@@ -1,3 +1,4 @@
+using QuizifydBackend.API.Middleware;
 using QuizifydBackend.Application;
 using QuizifydBackend.Infrastructure;
 using QuizifydBackend.Infrastructure.Data;
@@ -50,11 +51,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<GlobalExceptionMiddleware>();
+
 app.UseHttpsRedirection();
 
 app.UseCors("ReactPolicy");
 
 app.UseAuthorization();
+
 
 app.MapControllers();
 

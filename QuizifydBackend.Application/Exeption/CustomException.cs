@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace QuizifydBackend.Application.Exeption
 {
-    public class NotFoundException : CustomException
+    public class CustomException : Exception
     {
-        public NotFoundException(string message)
-       : base(message, 404)
+        public int StatusCode { get; }
+        public CustomException(string message, int statusCode) : base(message)
         {
+            StatusCode = statusCode;
         }
     }
 }

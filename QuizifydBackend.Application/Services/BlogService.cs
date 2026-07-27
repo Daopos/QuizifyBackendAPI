@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QuizifydBackend.Application.DTO.Blogs;
+using QuizifydBackend.Application.Exeption;
 using QuizifydBackend.Application.IRepositories;
 using QuizifydBackend.Application.IServices;
 using QuizifydBackend.Domain.Models;
@@ -54,15 +55,22 @@ namespace QuizifydBackend.Application.Services
 
         }
 
-        public Task<Blog> GetAllBlogs()
+        public async Task<IEnumerable<Blog>> GetAllBlogs()
         {
-            throw new Exception();
 
+            return await _blogRepo.GetAllBlogs();
         }
 
-        public Task<Blog> GetBlogById(Guid id)
+        public async Task<Blog?> GetBlogById(Guid id)
         {
-            throw new Exception();
+
+            var blog = await _blogRepo.GetBlogById(id);
+
+            if (blog is null)
+            {
+                throw new NotFoundException("No Blog Found");
+            }
+            return blog;
 
         }
     }

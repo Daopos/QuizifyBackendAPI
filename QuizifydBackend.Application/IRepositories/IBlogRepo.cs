@@ -13,7 +13,7 @@ namespace QuizifydBackend.Application.IRepositories
 
         public Task<Blog?> GetBlogById(Guid id);
 
-        public Task<IEnumerable<Blog?>> GetAllBlogs();
+        public Task<IEnumerable<Blog>> GetAllBlogs();
 
         public Task<Blog> UpdateBlogById(Blog blog);
 

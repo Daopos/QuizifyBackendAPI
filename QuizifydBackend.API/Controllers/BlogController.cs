@@ -28,5 +28,22 @@ namespace QuizifydBackend.API.Controllers
 
             return Ok(newBlog);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllBlogs()
+        {
+
+            var blogs = await _blogService.GetAllBlogs();
+
+            return Ok(blogs);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetBlogById(Guid id)
+        {
+            var blog = await _blogService.GetBlogById(id);
+
+            return Ok(blog);
+        }
     }
 }

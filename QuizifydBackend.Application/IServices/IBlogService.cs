@@ -17,8 +17,8 @@ namespace QuizifydBackend.Application.IServices
 
         public Task<Guid> DeleteBlogById(Guid id);
 
-        public Task<Blog> GetAllBlogs();
+        public Task<IEnumerable<Blog>> GetAllBlogs();
 
-        public Task<Blog> GetBlogById(Guid id);
+        public Task<Blog?> GetBlogById(Guid id);
     }
 }
