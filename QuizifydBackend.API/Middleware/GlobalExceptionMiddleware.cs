@@ -12,7 +12,6 @@ namespace QuizifydBackend.API.Middleware
             _next = next;
         }
 
-
         public async Task InvokeAsync(HttpContext context)
         {
             try

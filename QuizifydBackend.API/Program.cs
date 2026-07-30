@@ -9,11 +9,12 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("ReactPolicy", policy =>
     {
-        policy.WithOrigins("http://localhost:5173")
+        policy.WithOrigins("http://localhost:5173", "https://calm-flower-0e42f2000.7.azurestaticapps.net")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
 });
+
 
 //register infrastructure dbcontext
 builder.Services.AddDbContextInfra(builder.Configuration);

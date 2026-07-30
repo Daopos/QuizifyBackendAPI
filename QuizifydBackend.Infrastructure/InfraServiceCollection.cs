@@ -31,8 +31,6 @@ namespace QuizifydBackend.Infrastructure
                 })
             );
 
-
-
             return service;
         }
     }
